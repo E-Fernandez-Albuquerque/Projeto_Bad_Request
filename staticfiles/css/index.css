@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fresca&display=swap');
+
+
+html, body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow: auto;
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    max-height: 60px;
+    background-color: rgb(10,20,40);
+}
+
+.menu-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 60px;
+}
+
+.menu-logo img{
+    height: 90%;
+
+}
+
+.center{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+}
+
+.center div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.center div:hover{
+    background-color: #0055bb;
+}
+
+.center div a{
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+.center div a:visited{
+    color: white;
+    text-decoration: none;
+
+}
+
+.menu-item{
+    padding: 20px 40px;
+}
+
+.login{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login Button{
+    width: 100px;
+    margin-right: 20px;
+}
+
+.container-login{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+}
+
+
+.login-image img{
+    height: 92vh;
+    max-width: 100vh;
+    min-height: 300px;
+    min-width: 300px;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.login-input{
+    margin: 10px 0 !important;
+    width: 70%;
+}
+
+.login-button{
+    height: 50px !important;
+    width: 70% !important;
+    margin: 10px;
+}
+
+.login-text{
+    font-family: 'Fresca', sans-serif !important;
+    font-size: 36px !important;
+    padding-top: 50px;
+    margin: 10px !important;
+    color: #0A1428;
+}
+
+#signup {
+    text-align: right;
+    color: #303F9F;
+    font-family: 'Fresca', sans-serif !important;
+    text-decoration: none;
+    padding: 10px;
+    width: 70%;
+}
+
+.home-container{
+    display: flex;
+    flex-direction: column;
+    background: rgb(0,254,251);
+    background: linear-gradient(90deg, rgba(4,87,188,1) 0%, rgba(0,254,251,1) 100%);
+}
+
+.home-container-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100vh;
+
+}
+
+.home-container-1 img{
+    height: 90vh;
+}
+
+.home-container-2{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+
+.home-container-2 img{
+    height: 36vh;
+}
+
+.home-container-2 h2{
+    color: white;
+    font-family: 'Fresca', sans-serif !important;
+    text-align: center;
+    padding: 0px 10px;
+}
+
+.home-about{
+    height: 40px;
+    width: 25%;
+}
+
+.home-container-3{
+    display: flex;
+    flex-direction: row;
+    border-top: solid rgb(10,20,40) 2px;
+}
+
+.home-container-3 img{
+    max-width: 50%;
+    border-right: rgb(10,20,40) solid 2px;
+}
+
+@media (max-width: 1024px) {
+    .main {
+        width: 90%;
+    }
+
+    .login-image{
+        display: none;
+    }
+
+    .login-input, .login-button{
+        width: 50% !important;
+    }
+
+    .landing-image{
+        display: none;
+    }
+
+    .home-container-2{
+        width: 100%;
+    }
+}
+
+@media (max-width:700px){
+    .main{
+        width: 90%;
+    }
+
+    .login-image img{
+        display: none;
+    }
+
+    .login-input, .login-button{
+        width: 50% !important;
+    }
+}

@@ -1,0 +1,21 @@
+{% extends 'header.html' %}
+
+
+{% block content %}
+<div class="all-container">
+    {% for item in product_list %}
+    <div class="product-card">
+        <div class="title-price">
+            <h3>{{ item.title }}</h3>
+            <span>R${{ item.price }}</span>
+        </div>
+        <div class="description">
+            <p>{{ item.description }}</p>
+        </div>
+        <div class="button">
+            <a href="{{ item.get_absolute_url }}">Ver detalhes</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

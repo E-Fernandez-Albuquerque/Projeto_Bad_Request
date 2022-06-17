@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.top-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(10,20,40);
+}
+
+.top-menu img{
+    max-height: 8vh;
+    min-height: 4vh;
+    max-width: 8vh;
+    min-width: 4vh;
+}
+
+.center-options{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.4s ease-out;
+}
+
+.item-menu:hover{
+    background-color: #0055bb;
+
+}
+
+.item-menu-a{
+    width: 100%;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 25px 40px;
+}
+
+.item-menu-a:visited{
+    color: white;
+    text-decoration: none;
+}
+
+.menu-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0457BC;
+    height: 5vh;
+    width: 10%;
+    transition: 0.22s all ease-out;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.menu-button:hover{
+    transform: scale(1.05);
+}
+
+.menu-button a{
+    font-family: sans-serif;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.2s ease-out;
+    cursor: pointer;
+}
+
+.profile{
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: center;
+    min-width: 10%;
+    max-width: 30%;
+}
+
+.profile img{
+    max-height: 4vh;
+    padding: 0 8px;
+}
+
+.profile span{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.profile-user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: left;
+}
+
+.profile-user a{
+    color: #00FDFA;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-user a:visited{
+    color: #00FDFA;
+    text-decoration: none;
+}
+
+@media (max-width:700px){
+    .top-menu img{
+        display: none;
+    }
+
+    .profile img{
+        display: none;
+    }
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/courses.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/courses_detail.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/courses_mural.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/lesson.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/menu.css" %}" />
+
+
+</head>
+<body>
+    <div class="main-courses">
+
+        <div class="top-menu">
+            <img src="{% static "images/onlyLogo.png" %}">
+            <div class="center-options">
+                <div class="item-menu"><a class="item-menu-a" href="/">Home</a></div>
+                <div class="item-menu"><a class="item-menu-a" href="/cursos">Cursos</a></div>
+                <div class="item-menu"><a class="item-menu-a" href="/quem-somos">Quem somos</a></div>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="profile">
+                <img src="{% static "images" %}/icons/profile-white.png">
+                <div class="profile-user">
+                    <span>Olá, {{ user.username }}.</span>
+                    <a href="/user/logout">Sair</a>
+                </div>            </div>            
+            {% else %}
+            <div class="menu-button"><a  href='/login' class="to-login">Login</a></div>
+            {% endif %}
+        </div>
+
+
+        <div id="app"></div>
+        <div class="course-content">
+            <img class='banner' src="{% static "images" %}{{ courselesson.course.banner_url }}">
+            {% if user.is_authenticated %}
+            <div class="course-menu">
+                <div class="item"><a class="item-a" href="{{ courselesson.course.get_absolute_url }}">Aulas</a></div>
+                <div class="item"><a class="item-a" href="{{ courselesson.course.get_absolute_url }}/mural">Mural</a></div>
+                <div class="item"><a class="item-a">Avaliações</a></div>
+            </div>
+
+            <div class="lesson-container">
+                <div class="lesson-title">
+                    <h2>{{ courselesson.title }}</h2>
+                </div>
+                <video width='100%' height='300vh' style="padding: 30px 0;" controls>
+                    <source src="{% static "video" %}/{{ courselesson.video_url }}" type="video/mp4">
+                </video>
+
+
+                <div class="container-comments">
+                    <div class="comment-add">
+                        <div class="comment-add-title">
+                            <img class='comment-icon' src="{% static "images" %}/icons/add-comment.png">
+                            <h2>Adicionar comentário</h2>
+                        </div>
+                        <div class="comment-content">
+                            <form method="POST">
+                            {% csrf_token %}
+                                <div class="comment-field">
+                                    <textarea class='text' name="text" rows="4" cols="50"></textarea>
+                                    <input type="hidden" name="author" value="{{ request.user.id }}">
+                                    <input type="hidden" name="course" value="{{ courselesson.course.id }}">
+                                    <input type="hidden" name="lesson" value="{{ courselesson.id }}">
+                                    <div class="submit-button">
+                                    <input class='button btn-post' type='submit' value="Postar">
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="comments-title">
+                        <div class="comments-title-2">
+                            <img class='comment-icon' src="{% static "images" %}/icons/comments.png">
+                            <h2>Comentários da aula: {{ courselesson.lesson_comment.count }}</h2> 
+                        </div>
+                    </div>
+
+                    <div class="all-lesson-comments">
+                    {% for comment in object.lesson_comment.all %}
+                        <div class="comments-background">
+                            <div class="comments-container">
+                                <div class="comment-author">
+                                    <img class="author-photo" src="{% static "images" %}/icons/profile.png">
+                                    <span class="author-username">{{ comment.author }}</span>
+                                </div>
+                                <div class="comment-text">
+                                    <p class="comment-text-p">{{ comment.text }}</p>
+                                </div>
+                                <div class="comment-date">
+                                    <span>Postado em: {{ comment.date }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        {% else %}
+        <div class="course-intro">
+            <h2>Bem-vindo ao curso de {{ course.title }} </h2>
+            <div class="course-total-description">
+                <h4>Descrição</h4>
+                <p>{{ course.description }}</p>
+            </div>
+            <div class="course-info">
+                <div class="course-info-item">
+                    <h4>Quantidade de aulas disponíveis</h4>
+                    <span>{{ object.lesson.all.count }}</span>  
+                </div>
+                <div class="course-info-item">
+                    <h4>Investimento</h4>
+                    <span>R${{ object.price }}</span>
+                </div>
+            </div>
+            <div class="button btn-buy"><a>Comprar</a></div>
+        </div>
+        {% endif %}
+    </div>
+    <script src="{% static "frontend/main.js" %}"></script>
+    <script src="{% static "js/courses.js" %}"></script>
+</body>
+</html>

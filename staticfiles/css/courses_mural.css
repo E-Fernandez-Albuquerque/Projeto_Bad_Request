@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Fresca&display=swap');
+
+.comments-background{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+}
+
+.comments-title{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.comments-title div{
+    display: flex;
+    width: 80%;
+}
+
+.comments-title h3{
+    width: 80%;
+}
+
+.comments-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #fdfdfd;
+    width: 80%;
+    margin: 30px 0 10px;
+    border-radius: 20px;
+    border-left: 5px solid #0A1428;
+    box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.15);
+}
+
+.comment-author{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    padding: 10px 12px 3px;
+}
+
+.author-photo{
+    height: 6vh;
+}
+
+.author-username{
+    font-family: 'Fresca', sans-serif;   
+    font-size: 18px;
+    color: #0A1428;
+}
+
+.comment-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.comment-text-p{
+    color: #0A1428;
+    width: 90%;
+    text-align: justify;
+    text-indent: 5%;
+}
+
+.comment-date{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding: 10px;
+}
+
+.comment-date span{
+    font-family: 'Fresca', sans-serif;   
+}
+
+.comment-add{
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.comment-icon{
+    height: 7vh;
+    margin-right: 15px;
+}
+
+.comment-add-title{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.comment-add-title h2{
+    margin: 0;
+}
+
+.comment-content{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+}
+
+.comments-title-2 h2{
+    margin: 0;
+}
+
+.comments-title-2{
+    display: flex;
+    align-items: center;
+    justify-content: left;
+}
+
+.text{
+    height: 16vh;
+    width: 100%;
+    resize: none;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #0457BC;
+    font-family: 'Fresca', sans-serif;   
+    font-size: 20px;
+    border-color: #0457BC;
+    border-radius: 16px;
+}
+
+.text:focus{
+    outline-color: #0457BC
+}
+
+.submit-button{
+    display: flex;
+    padding: 20px 0;
+    align-items: center;
+    justify-content: end;
+}
+
+.btn-post{
+    width: 15% !important;
+    border: none;
+    color: #fff;
+    font-family: 'Fresca', sans-serif;   
+    font-size: 15px;
+}

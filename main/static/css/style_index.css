@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+html, body{
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 60px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    border-bottom: 1px #210233 solid !important;
+    margin-bottom: 30px;
+}
+
+header div{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    height: 100% !important;
+    font-size: 17px !important;
+    font-family: 'Raleway', sans-serif !important;
+    transition: all 0.6s ease !important;
+    cursor: pointer !important;
+}
+
+header div a{
+    line-height: 60px !important;
+    padding: 0 25px !important;
+    text-align: center !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    color: #210233 !important;
+    transition: all ease-in 0.4s;
+}
+
+header div a:hover{
+    background-color: #210233 !important;
+    color: #fff !important;
+}
+
+.all-container{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.container h3{
+    margin: 0;
+}
+
+.product-card{
+    margin: 5px 15px;
+    border: #ddd solid 0.5px;
+    padding: 10px;
+    width: 20%;
+}
+
+.product-card h3{
+    font-family: 'Amatic SC';
+    font-size: 30px;
+    padding: 5px 0;
+    margin: 0;
+}
+
+.product-card span{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;
+}
+
+.title-price{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-price span{
+    color: #222;
+}
+
+.description{
+    display: flex;
+    align-items: center;
+    justify-content: initial;
+}
+
+.description p {
+    text-align: justify;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    background-color: #210233;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+}
+
+.button:hover{
+    background-color: #3a035a;
+}
+
+.button a{
+    text-decoration: none;
+    font-family: Raleway;
+    line-height: 30px;
+    font-size: 16px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+}

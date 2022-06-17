@@ -1,0 +1,19 @@
+Column1	Column2	Column3	Column4
+10	Filtro de ar	5000	4090
+12	Filtro de combustível	10000	4292
+11	Filtro de óleo	5000	30
+13	Lâmpada de freio motorista	50000	3
+1	Óleo de motor	5000	92
+6	Pneu dianteiro motorista	40000	36990
+7	Pneu dianteiro passageiro	40000	36990
+8	Pneu traseiro motorista	40000	36990
+9	Pneu traseiro passageiro	40000	36990
+2	Rolamento dianteiro motorista	20000	166
+3	Rolamento dianteiro passageiro	20000	166
+4	Rolamento traseiro motorista	20000	166
+5	Rolamento traseiro passageiro	20000	166
+			
+			
+			
+			
+			

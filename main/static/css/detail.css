@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+
+.detail-container{
+    display: flex;
+    flex-direction: column;
+    padding: 15px 20px;
+    width: 50%;
+    margin: 0 auto;
+    border: #ddd solid 0.5px;
+}
+
+.detail-container .title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title h3{
+    font-family: 'Amatic SC';
+    margin: 5px 0;
+    font-size: 39px;
+}
+
+.title span{
+    font-family: 'Raleway';
+    font-size: 30px;
+    color: #ffbb00;
+}
+
+.image-description{
+    display: flex;
+    flex-direction: row;
+}
+
+.image{
+    display: flex;
+    flex-direction: row;
+    height: 30vh;
+    padding: 3px;
+    background-color: #210233;
+}
+
+.image img{
+    height: 100%;
+}
+
+.description-detail{
+    padding-left: 20px;
+    width: 100%;
+}
+
+.description-detail p {
+    font-family: sans-serif;
+    font-size: 12px;
+    text-align: justify;
+    margin: 0;
+    text-indent: 5%;
+    line-height: 20px;
+}
+
+.description-detail p::first-letter{
+    font-size: 2rem;
+    color: #210233;
+}
+
+.button-detail{
+    width: 100%;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: end;
+}
+
+.buy{
+    cursor: pointer;
+    width: 33.3%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway';
+    color: #fff;
+    height: 35px;
+    background-color: #210233;
+    transition: 0.4s all ease;
+}
+
+.buy:hover{
+    background-color: #3a035a;
+}
+
+.wish{
+    background-color: #fff !important;
+    color: #210233;
+    border: #210233 0.5px solid;
+    box-sizing: border-box;
+    margin-right: 15px;
+    font-weight: bolder;
+}
+
+.wish:hover{
+    background-color: #f7e9ff !important;
+}
+
+#download{
+    font-size: 24px;
+}

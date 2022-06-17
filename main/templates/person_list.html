@@ -1,0 +1,9 @@
+{% extends 'header.html' %}
+
+{% block content %}
+
+{% for item in person_list %}
+<h2>{{ item.name }}</h2>
+{% endfor %}
+
+{% endblock %}

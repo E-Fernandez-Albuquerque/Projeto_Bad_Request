@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" type="text/css" href="{% static "css/menu.css" %}" />
+
+
+</head>
+<body>
+    <div id="main">
+
+        <div class="top-menu">
+            <img src="{% static "images/onlyLogo.png" %}">
+            <div class="center-options">
+                <div class="item-menu"><a class="item-menu-a" href="/">Home</a></div>
+                <div class="item-menu"><a class="item-menu-a" href="/cursos">Cursos</a></div>
+                <div class="item-menu"><a class="item-menu-a" href="/quem-somos">Quem somos</a></div>
+            </div>
+            {% if user.is_authenticated %}
+            <div class="profile">
+                <img src="{% static "images" %}/icons/profile-white.png">
+                <div class="profile-user">
+                    <span>Olá, {{ user.username }}.</span>
+                    <a href="/user/logout">Sair</a>
+                </div>            </div>            
+            {% else %}
+            <div class="menu-button"><a  href='/login' class="to-login">Login</a></div>
+            {% endif %}
+        </div>
+
+
+        <div id="app"></div>
+    </div>
+    <script src="{% static "frontend/main.js" %}"></script>
+</body>
+</html>
