@@ -8,7 +8,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('old/', include('main.urls', namespace='main')),
     path('user/', include('users.urls')),
-    path('retorno/pagseguro/', include('pagseguro.urls')),
     path('chat/', include('chat.urls', namespace='chat')),
     path('api-auth/', include('rest_framework.urls')),
     path('', include('frontend.urls')),
