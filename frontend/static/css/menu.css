@@ -43,7 +43,7 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
-    padding: 25px 40px;
+    padding: 20px 40px;
 }
 
 .item-menu-a:visited{
@@ -85,7 +85,7 @@
     align-items: center;
     justify-content: center;
     min-width: 10%;
-    max-width: 30%;
+    max-width: 40%;
 }
 
 .profile img{
@@ -124,5 +124,9 @@
 
     .profile img{
         display: none;
+    }
+
+    .item-menu-a{
+        padding: 20px 20px;
     }
 }
