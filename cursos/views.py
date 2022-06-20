@@ -73,3 +73,5 @@ class CourseLessonDetailView(FormMixin, DetailView):
     def form_valid(self, form):
         form.save()
         return super(CourseLessonDetailView, self).form_valid(form)
+
+

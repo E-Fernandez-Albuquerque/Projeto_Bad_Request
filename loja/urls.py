@@ -11,7 +11,8 @@ urlpatterns = [
     path('chat/', include('chat.urls', namespace='chat')),
     path('api-auth/', include('rest_framework.urls')),
     path('', include('frontend.urls')),
-    path('cursos/', include('cursos.urls'))
+    path('cursos/', include('cursos.urls')),
+    path('myadmin/', include('myadmin.urls'))
 ]
 
 #urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]

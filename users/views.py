@@ -55,7 +55,6 @@ def logout_site(request):
 class AccountLoginView(APIView):
     serializer_class = UserSerializer
     def post(self, request, format=None):
-
         serializer = self.serializer_class(data=request.data)
         data = request.data
 

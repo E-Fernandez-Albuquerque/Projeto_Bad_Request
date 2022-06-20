@@ -11,7 +11,6 @@ class Course(models.Model):
     course_slug = models.SlugField(max_length=255, unique=True, null=False)
     image = models.ImageField(default='null', upload_to = 'frontend/static/images/courseImage')
     course_banner = models.ImageField(default='null', upload_to='frontend/static/images/courseBanner')
-    presentationVideo = models.FileField(default='null', upload_to='frontend/static/images/courseVideo')
 
     def __str__(self):
         return self.title

@@ -1,0 +1,48 @@
+.forbidden{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.forbidden img{
+    height: 30vh;
+    max-height: 50%;
+}
+
+.staff{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.myadmin-menu{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.myadmin-menu a{
+    padding: 2px 20px;
+    margin: 10px;
+    color: rgb(10,20,40);
+    text-decoration: none;
+    transition: all ease 0.1s;
+}
+
+#exit{
+    color: red;
+}
+
+.myadmin-menu a:visited{
+    color: rgb(10,20,40);
+    text-decoration: none;
+}
+
+.myadmin-menu a:hover{
+    transform: scale(1.01);
+}
+

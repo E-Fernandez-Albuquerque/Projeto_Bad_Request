@@ -1,0 +1,19 @@
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: rgb(10,20,40);
+    color: #ccc;
+}
+
+footer a{
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+footer a:visited{
+    color: #ccc;
+    text-decoration: none;
+}

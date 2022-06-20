@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'frontend.apps.FrontendConfig',
     'rest_framework',
     'cursos',
+    'myadmin'
 ]
 
 CORS_ORIGIN_ALLOW_ALL = True
