@@ -3,6 +3,7 @@ from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.shortcuts import get_object_or_404, redirect, HttpResponseRedirect
 
 class Course(models.Model):
     title = models.CharField(max_length=255, null=False, unique=True)
@@ -33,6 +34,9 @@ class Course(models.Model):
 
     def get_absolute_url(self):
         return reverse('cursos:course_details', kwargs={'course_slug': self.course_slug})
+
+    def delete_course(self):
+        return reverse('myadmin:')
 
 
 class CourseLesson(models.Model):

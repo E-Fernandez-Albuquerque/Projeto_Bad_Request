@@ -4,6 +4,6 @@ from .views import index
 urlpatterns = [
     path('', index),
     path('quem-somos', index),
-    path('login', index),
+    path('login', index, name='mylogin'),
     path('cadastro', index)
 ]

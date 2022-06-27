@@ -58,6 +58,17 @@ export default class Login extends Component {
             }),
           };
         fetch('/user/login', requestOptions)
-        .then(() => this.props.history.push('/')).then(() => location.reload())
+        .then(function(response){
+            if (response.status === 200){
+                console.log("200")
+                window.location.href = ("/")
+            } else {
+                console.log('400')
+                window.alert('Usuário ou senha inválidos')
+            }
+        })
+
+
+        // .then(() => this.props.history.push('/')).then(() => location.reload())
     }
 }

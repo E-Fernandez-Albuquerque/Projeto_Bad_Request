@@ -13,9 +13,3 @@ class LessonPostForm(forms.ModelForm):
     class Meta:
         model = LessonPosts
         fields = ('author', 'course', 'lesson', 'text')
-
-
-class InsertCourse(forms.ModelForm):
-    class Meta:
-        model = Course
-        fields = ('title', 'description', 'price', 'image', 'course_banner')
