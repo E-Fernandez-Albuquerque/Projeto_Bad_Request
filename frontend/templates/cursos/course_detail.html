@@ -51,7 +51,7 @@
                 <div class="item"><a class="item-a">Avaliações</a></div>
             </div>
         </div>
-        
+
 
         {% for lesson in object.lesson.all %}
         <div class="lessons-container">
@@ -66,9 +66,9 @@
                     <a href="{{ lesson.get_absolute_url }}">Assistir</a>
                 </div>
                 </div>
-        </div>
-        
+        </div>        
         {% endfor %}
+
         
         {% else %}
         <div class="course-intro">

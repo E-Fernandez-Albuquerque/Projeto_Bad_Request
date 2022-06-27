@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, CourseLesson, CoursePosts,LessonPosts
+from .models import BoughtBy, Course, CourseLesson, CoursePosts,LessonPosts
 
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
@@ -21,3 +21,8 @@ class PostsAdmin(admin.ModelAdmin):
 @admin.register(LessonPosts)
 class PostsAdmin(admin.ModelAdmin):
     list_display = ('id', 'author', 'course', 'lesson', 'text', 'date')
+
+
+@admin.register(BoughtBy)
+class BoughtByAdmin(admin.ModelAdmin):
+    list_display = ('user', 'course')
