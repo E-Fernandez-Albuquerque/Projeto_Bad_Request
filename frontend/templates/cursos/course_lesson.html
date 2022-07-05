@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="all-lesson-comments">
-                    {% for comment in object.lesson_comment.all %}
+                    {% for comment in object.lesson_comment.all|dictsortreversed:"date" %}
                         <div class="comments-background">
                             <div class="comments-container">
                                 <div class="comment-author">

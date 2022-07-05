@@ -11,4 +11,4 @@ class InsertCourse(forms.ModelForm):
 class EditCourse(forms.ModelForm):
     class Meta:
         model = Course
-        fields = ('title', 'description', 'price')
+        fields = ('title', 'description', 'price', 'image', 'course_banner')

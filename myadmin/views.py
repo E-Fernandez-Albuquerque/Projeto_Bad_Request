@@ -1,9 +1,8 @@
-from pyexpat import model
 from re import template
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView,ListView
-from cursos.views import Course
+from cursos.views import Course, CourseLesson
 from .forms import InsertCourse, EditCourse
 from django.contrib import messages
 # Create your views here.
@@ -49,3 +48,13 @@ def new_course(request):
     else:
         form = InsertCourse()
         return render(request, 'MyAdminCriarCurso.html', {'form': form})
+
+
+def myadmin_lesson(request, id):
+    courses = Course.objects.get(id=id)
+    lessons = CourseLesson.objects.filter(course=courses)
+    print(lessons)
+    context = {
+        'lessons': lessons
+    }
+    return render(request, 'MyAdminGerenciarAulas.html', context=context)
