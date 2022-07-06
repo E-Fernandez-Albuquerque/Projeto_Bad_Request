@@ -50,7 +50,7 @@ O projeto Bad Request foi desenvolvido como atividade avaliativa da disciplina d
 
 ## Informações adicionais:
 
-Link de acesso ao projeto deployado: secret-sea-70972.herokuapp.com
+Link de acesso ao projeto deployado: https://secret-sea-70972.herokuapp.com
 
 Apresentação da primeira etapa do projeto (Prova de conceito): https://www.canva.com/design/DAFBJ-EwkME/wAOmtUCjZTpaSCdr9V-wWw/edit?utm_content=DAFBJ-EwkME&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
