@@ -4,12 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static "/css/myadmin.css" %}">
     <title>Document</title>
 </head>
 <body>
-    <h1>Aulas</h1>
-    {% for lesson in lessons %}
-    <span>{{ lesson.title }}</span>
-    {% endfor %}
+    <div class="myadmin-courses">
+        <h2>Gerenciar aulas</h2>
+        <a class='plus-course' href="/myadmin/cursos/editar-curso/{{ course_id }}/aulas/criar-aula"><span class="material-symbols-outlined">add</span>Adicionar aula</a>
+        {% for lesson in lessons %}
+        <div class="myadmin-course">
+            <span>{{ lesson.lesson_slug }}</span>
+            <div class="myadmin-icons">
+                <a href='#'><span class="material-symbols-outlined">edit</span></a>
+                <a href='/myadmin/cursos/editar-curso/{{ lesson.course.id }}/aulas/deletar-aula/{{ lesson.lesson_slug }}'><span class="material-symbols-outlined">delete</span></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </body>
 </html>

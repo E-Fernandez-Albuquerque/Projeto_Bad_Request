@@ -9,18 +9,18 @@ class CourseAdmin(admin.ModelAdmin):
 
 @admin.register(CourseLesson)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'course', 'title', 'description', 'lesson_slug')
+    list_display = ('course', 'title', 'description', 'lesson_slug')
     prepopulated_fields = {'lesson_slug': ("title",)}
 
 
 @admin.register(CoursePosts)
 class PostsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'author', 'course', 'text', 'date')
+    list_display = ('author', 'course', 'text', 'date')
 
 
 @admin.register(LessonPosts)
 class PostsAdmin(admin.ModelAdmin):
-    list_display = ('id', 'author', 'course', 'lesson', 'text', 'date')
+    list_display = ('author', 'course', 'lesson', 'text', 'date')
 
 
 @admin.register(BoughtBy)

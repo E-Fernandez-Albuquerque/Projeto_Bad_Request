@@ -40,7 +40,6 @@ class Course(models.Model):
 
 
 class CourseLesson(models.Model):
-    id = models.IntegerField(primary_key=True)
     course = models.ForeignKey(Course, related_name='lesson', on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     description = models.TextField()
