@@ -1,5 +1,6 @@
 from attr import fields
 from django import forms
+from django.contrib.auth.models import User
 
 from cursos.models import Course, CourseLesson
 
@@ -24,3 +25,15 @@ class EditLesson(forms.ModelForm):
     class Meta:
         model = CourseLesson
         fields = ('title', 'description', 'lesson_slug', 'video', 'image')
+
+
+class EditUser(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'email', 'is_staff')
+
+
+class InsertUser(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ('username', 'password', 'email', 'is_staff')

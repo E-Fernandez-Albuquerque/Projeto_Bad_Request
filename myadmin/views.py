@@ -3,10 +3,11 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView,ListView
 from cursos.views import Course, CourseLesson
-from .forms import InsertCourse, EditCourse, InsertLesson, EditLesson
+from .forms import InsertCourse, EditCourse, InsertLesson, EditLesson, InsertUser, EditUser
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.hashers import make_password
 # Create your views here.
 
 
@@ -102,3 +103,51 @@ def edit_lesson(request, id, lesson_slug):
             return render(request, 'MyAdminEditarAula.html', {'form': form, 'edit': lesson})
     else:
         return render(request, 'MyAdminEditarAula.html', {'form': form, 'edit': lesson})
+
+
+
+def myadmin_users(request):
+    users = User.objects.all().order_by('username')
+    return render(request, 'MyAdminUsuarios.html', {'users': users})
+
+
+# class MyAdminUsers(ListView):
+#     template_name = 'MyAdminUsers.html'
+#     model = User
+
+
+def new_user(request):
+    if request.method == 'POST':
+        form = InsertUser(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/myadmin/usuarios')
+    else:
+        form = InsertUser()
+        return render(request, 'MyAdminCriarUsuario.html', {'form': form})
+
+
+def edit_user(request, id):
+    user = get_object_or_404(User, pk=id)
+    form = EditUser(instance=user)
+
+    if(request.method=='POST'):
+        form = EditUser(request.POST, instance=user)
+
+        if form.is_valid():
+            user.password = make_password(user.password)
+            user.save()
+            return redirect('/myadmin/usuarios')
+        else:
+            return render(request, 'MyAdminEditarUsuario.html', {'form': form, 'edit': user})
+    else:
+        return render(request, 'MyAdminEditarUsuario.html', {'form': form, 'edit': user})
+
+
+def delete_user(request, id):
+    user = get_object_or_404(User, pk=id)
+    user.delete()
+
+    messages.info(request, 'Usuario deletado')
+
+    return redirect('/myadmin/usuarios')
