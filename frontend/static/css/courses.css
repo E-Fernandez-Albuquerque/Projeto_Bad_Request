@@ -132,6 +132,8 @@
     font-family: sans-serif;
     color: #666;
     font-size: 11px;
+    word-wrap: break-word;
+    width: 90%;
 }
 
 .course-view{
