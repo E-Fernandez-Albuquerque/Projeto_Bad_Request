@@ -17,4 +17,10 @@ class EditCourse(forms.ModelForm):
 class InsertLesson(forms.ModelForm):
     class Meta:
         model = CourseLesson
+        fields = ('course', 'title', 'description', 'lesson_slug', 'video', 'image')
+
+
+class EditLesson(forms.ModelForm):
+    class Meta:
+        model = CourseLesson
         fields = ('title', 'description', 'lesson_slug', 'video', 'image')

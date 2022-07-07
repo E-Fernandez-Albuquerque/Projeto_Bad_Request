@@ -14,13 +14,12 @@
     <div class="myadmin-form">
         <a class='plus-course' href="/myadmin"><span class="material-symbols-outlined">home</span>Início da área administrativa</a>
 
-        <h2>Criar nova aula</h2>
-        <form method='POST' enctype="multipart/form-data">
+        <h2>Atualizar aula</h2>
+        <form method='POST'>
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Salvar">
+            <input type="submit" value="Atualizar">
         </form>
     </div>
-    
 </body>
 </html>

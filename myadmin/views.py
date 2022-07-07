@@ -3,8 +3,10 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView,ListView
 from cursos.views import Course, CourseLesson
-from .forms import InsertCourse, EditCourse, InsertLesson
+from .forms import InsertCourse, EditCourse, InsertLesson, EditLesson
 from django.contrib import messages
+from django.urls import reverse
+from django.http import HttpResponseRedirect
 # Create your views here.
 
 
@@ -68,16 +70,35 @@ def delete_lesson(request, id, lesson_slug):
 
     messages.info(request, 'Aula deletada')
 
-    return redirect(f'/myadmin/cursos')
+    return HttpResponseRedirect(reverse('myadmin:adminaulas', kwargs={'id':id}))
+    # redirect(f'/myadmin/cursos')
 
 
 def new_lesson(request, id):
     if request.method == 'POST':
         form = InsertLesson(request.POST)
-        form.initial['course_id'] = id
+        course = Course.objects.get(id=id)
         if form.is_valid():
+            print(course)
             form.save()
-            return redirect('/myadmin/cursos')
+            return HttpResponseRedirect(reverse('myadmin:adminaulas', kwargs={'id':id}))
     else:
         form = InsertLesson()
-        return render(request, 'MyAdminCriarAula.html', {'form': form, 'course_id': id})
+        return render(request, 'MyAdminCriarAula.html', {'form': form})
+
+
+def edit_lesson(request, id, lesson_slug):
+    course = get_object_or_404(Course, pk=id)
+    lesson = CourseLesson.objects.get(course=course, lesson_slug=lesson_slug)
+    form = EditLesson(instance=lesson)
+
+    if(request.method=='POST'):
+        form = EditLesson(request.POST, instance=lesson)
+
+        if form.is_valid():
+            lesson.save()
+            return redirect('/myadmin/cursos')
+        else:
+            return render(request, 'MyAdminEditarAula.html', {'form': form, 'edit': lesson})
+    else:
+        return render(request, 'MyAdminEditarAula.html', {'form': form, 'edit': lesson})

@@ -1,5 +1,7 @@
 from django.urls import path
-from .views import new_lesson, MyAdminHome, MyAdminCursos, delete_course, delete_lesson, edit_course, myadmin_lesson, new_course
+from .views import new_lesson, edit_lesson, MyAdminHome, MyAdminCursos, delete_course, delete_lesson, edit_course, myadmin_lesson, new_course
+
+app_name = 'myadmin'
 
 urlpatterns = [
     path('', MyAdminHome.as_view(), name='adminhome'),
@@ -9,6 +11,7 @@ urlpatterns = [
     path('cursos/criar-curso/', new_course, name='create'),
     path('cursos/editar-curso/<int:id>/aulas', myadmin_lesson, name='adminaulas'),
     path('cursos/editar-curso/<int:id>/aulas/deletar-aula/<slug:lesson_slug>', delete_lesson, name='deletar-aula'),
+    path('cursos/editar-curso/<int:id>/aulas/editar-aula/<slug:lesson_slug>', edit_lesson, name='editar-aula'),
     path('cursos/editar-curso/<int:id>/aulas/criar-aula', new_lesson, name='criar-aula'),
 
 ]

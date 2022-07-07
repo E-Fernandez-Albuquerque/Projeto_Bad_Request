@@ -11,13 +11,15 @@
 </head>
 <body>
     <div class="myadmin-courses">
+        <a class='plus-course' href="/myadmin"><span class="material-symbols-outlined">home</span>Início da área administrativa</a>
+
         <h2>Gerenciar aulas</h2>
         <a class='plus-course' href="/myadmin/cursos/editar-curso/{{ course_id }}/aulas/criar-aula"><span class="material-symbols-outlined">add</span>Adicionar aula</a>
         {% for lesson in lessons %}
         <div class="myadmin-course">
-            <span>{{ lesson.lesson_slug }}</span>
+            <span>{{ lesson.title }}</span>
             <div class="myadmin-icons">
-                <a href='#'><span class="material-symbols-outlined">edit</span></a>
+                <a href='/myadmin/cursos/editar-curso/{{ lesson.course.id }}/aulas/editar-aula/{{ lesson.lesson_slug }}'><span class="material-symbols-outlined">edit</span></a>
                 <a href='/myadmin/cursos/editar-curso/{{ lesson.course.id }}/aulas/deletar-aula/{{ lesson.lesson_slug }}'><span class="material-symbols-outlined">delete</span></a>
             </div>
         </div>

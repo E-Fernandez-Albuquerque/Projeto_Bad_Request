@@ -12,7 +12,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls')),
     path('', include('frontend.urls')),
     path('cursos/', include('cursos.urls')),
-    path('myadmin/', include('myadmin.urls'))
+    path('myadmin/', include('myadmin.urls', namespace='myadmin'))
 ]
 
 #urlpatterns += [re_path(r'^.*', TemplateView.as_view(template_name='index.html'))]
