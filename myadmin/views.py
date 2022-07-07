@@ -8,6 +8,7 @@ from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.hashers import make_password
+from cursos.models import BoughtBy
 # Create your views here.
 
 
@@ -151,3 +152,17 @@ def delete_user(request, id):
     messages.info(request, 'Usuario deletado')
 
     return redirect('/myadmin/usuarios')
+
+
+# def user_courses(request, id):
+#     # user = get_object_or_404(User, pk=id)
+#     # bought = BoughtBy.objects.filter(user_id=id)
+#     # courses = Course.objects
+#     print(user)
+#     print(bought)
+#     context = {
+#         'user': user,
+#         'bought': bought,
+#         'courses': courses
+#     }
+#     return render(request, 'MyAdminUsuarioCursos.html', context=context)
