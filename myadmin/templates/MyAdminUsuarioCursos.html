@@ -14,13 +14,12 @@
         <a class='plus-course' href="/myadmin"><span class="material-symbols-outlined">home</span>Início da área administrativa</a>
 
         <h2>Cursos adquiridos</h2>
+        <h4>Cliente: {{ user.username }}</h4>
         <a class='plus-course' href="/myadmin/cursos/criar-curso"><span class="material-symbols-outlined">add</span>Adicionar novo curso</a>
         {% for curso in courses %}
         <div class="myadmin-course">
             <span>{{ curso.title }}</span>
             <div class="myadmin-icons">
-                <a href='/myadmin/cursos/editar-curso/{{ curso.id }}'><span class="material-symbols-outlined">edit</span></a>
-                <a href='/myadmin/cursos/editar-curso/{{ curso.id }}/aulas'><span class="material-symbols-outlined">play_lesson</span></a>
                 <a href='/myadmin/cursos/deletar-curso/{{ curso.id }}'><span class="material-symbols-outlined">delete</span></a>
             </div>
             
