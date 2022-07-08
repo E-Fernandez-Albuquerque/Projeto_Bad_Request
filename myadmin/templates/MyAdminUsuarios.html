@@ -18,6 +18,7 @@
         {% for user in users %}
         <div class="myadmin-course">
             <span>{{ user.username }}</span>
+            <span style="font-size: 5px !important; color: red;">{{ user.date_joined }}</span>
             <div class="myadmin-icons">
                 <a href='/myadmin/usuarios/editar-usuario/{{ user.id }}'><span class="material-symbols-outlined">edit</span></a>
                 <a href='/myadmin/usuarios/editar-usuario/{{ user.id }}/cursos-adquiridos'><span class="material-symbols-outlined">subscriptions</span></a>
