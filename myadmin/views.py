@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.models import User
 from django.views.generic import TemplateView,ListView
 from cursos.views import Course, CourseLesson
-from .forms import InsertCourse, EditCourse, InsertLesson, EditLesson, InsertUser, EditUser
+from .forms import InsertCourse, EditCourse, InsertLesson, EditLesson, InsertUser, EditUser, BoughtCourses
 from django.contrib import messages
 from django.urls import reverse
 from django.http import HttpResponseRedirect
@@ -170,3 +170,14 @@ def user_courses(request, id):
         'courses': courses
     }
     return render(request, 'MyAdminUsuarioCursos.html', context=context)
+
+
+def new_buy(request, id):
+    if request.method == 'POST':
+        form = BoughtCourses(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse('myadmin:cursos-usuario', kwargs={'id':id}))
+    else:
+        form = BoughtCourses()
+        return render(request, 'MyAdminCursoComprado.html', {'form': form})

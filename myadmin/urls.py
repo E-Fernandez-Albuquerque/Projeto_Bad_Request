@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import user_courses, new_user, edit_user, delete_user, new_lesson, edit_lesson, myadmin_users, MyAdminHome, MyAdminCursos, delete_course, delete_lesson, edit_course, myadmin_lesson, new_course
+from .views import new_buy, user_courses, new_user, edit_user, delete_user, new_lesson, edit_lesson, myadmin_users, MyAdminHome, MyAdminCursos, delete_course, delete_lesson, edit_course, myadmin_lesson, new_course
 
 app_name = 'myadmin'
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('usuarios/criar-usuario', new_user, name='criar-user'),
     path('usuarios/editar-usuario/<int:id>', edit_user, name='editar-user'),
     path('usuarios/deletar-usuario/<int:id>', delete_user, name='deletar-user'),
-    path('usuarios/editar-usuario/<int:id>/cursos-adquiridos', user_courses, name='cursos-usuario')
+    path('usuarios/editar-usuario/<int:id>/cursos-adquiridos', user_courses, name='cursos-usuario'),
+    path('usuarios/editar-usuario/<int:id>/adicionar-curso', new_buy, name='cursos-comprado'),
 
 ]

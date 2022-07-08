@@ -2,7 +2,7 @@ from attr import fields
 from django import forms
 from django.contrib.auth.models import User
 
-from cursos.models import Course, CourseLesson
+from cursos.models import Course, CourseLesson, BoughtBy
 
 class InsertCourse(forms.ModelForm):
     class Meta:
@@ -37,3 +37,9 @@ class InsertUser(forms.ModelForm):
     class Meta:
         model = User
         fields = ('username', 'password', 'email', 'is_staff')
+
+    
+class BoughtCourses(forms.ModelForm):
+    class Meta:
+        model = BoughtBy
+        fields = ('course', 'user')
