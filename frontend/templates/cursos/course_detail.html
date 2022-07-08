@@ -33,7 +33,7 @@
                 <img src="{% static "images" %}/icons/profile-white.png">
                 <div class="profile-user">
                     <span>Olá, {{ user.username }}.</span>
-                    <a href="#">Meus cursos</a>
+                    <a href="/perfil">Meus cursos</a>
                     <a href="/user/logout">Sair</a>
                 </div>            
             </div>            
@@ -42,11 +42,10 @@
             {% endif %}
         </div>
 
-
         <div id="app"></div>
         <div class="course-content">
             <img class='banner' src="{% static "images" %}{{course.banner_url}}">
-            {% if user.is_authenticated %}
+            {% if status %}
             <div class="course-menu">
                 <div class="item"><a class="item-a" href="{{ course.get_absolute_url }}">Aulas</a></div>
                 <div class="item"><a class="item-a" href="{{ course.get_absolute_url }}/mural">Mural</a></div>
