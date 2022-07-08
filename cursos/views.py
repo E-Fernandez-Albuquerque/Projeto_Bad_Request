@@ -117,3 +117,12 @@ class CourseLessonDetailView(FormMixin, DetailView):
         return super(CourseLessonDetailView, self).form_valid(form)
 
 
+def buy_course(request, course_slug):
+    user = User.objects.get(username=request.user.username)
+    this_course = Course.objects.get(course_slug=course_slug)
+    bought = BoughtBy()
+    bought.user = user
+    bought.course = this_course
+    bought.save()
+
+    return HttpResponseRedirect(reverse('cursos:course_details', kwargs={'course_slug': course_slug}))
