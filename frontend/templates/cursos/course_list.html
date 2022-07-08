@@ -31,8 +31,10 @@
                 <img src="{% static "images" %}/icons/profile-white.png">
                 <div class="profile-user">
                     <span>Olá, {{ user.username }}.</span>
+                    <a href="#">Meus cursos</a>
                     <a href="/user/logout">Sair</a>
-                </div>            </div>            
+                </div>            
+            </div>            
             {% else %}
             <div class="menu-button"><a  href='/login' class="to-login">Login</a></div>
             {% endif %}
