@@ -15,6 +15,7 @@ def user_profile(request):
     print(user)
     print(bought)
     context = {
-        'courses': courses
+        'courses': courses,
+        'bought': bought
     }
     return render(request, 'userprofile.html', context=context)

@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="{% static "css/menu.css" %}" />
     <link rel="stylesheet" type='text/css' href="{% static "css/profile.css" %}">
     <link rel="stylesheet" type="text/css" href="{% static "css/index.css" %}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
 
     <title>Document</title>
@@ -35,14 +36,44 @@
             <div class="menu-button"><a  href='/login' class="to-login">Login</a></div>
             {% endif %}
         </div>
-    <h1>Olá, {{ user.username }}</h1>
+
+
+    <div class="user-profile">
+        <div class="user-info">
+            <div class="info">
+                <div class="prof-img">
+                    <img src="{% static "images" %}/icons/profile-blue.png" class="profile-pic">
+                </div>
+                <h2>Olá, {{ user.username }}.</h2>
+                <span>Email: {{ user.email }}</span>
+                <span>Membro desde: {{ user.date_joined }}</span>
+            </div>
+            <div class="learning-info info">
+                <h3>Informações de aprendizado</h3>
+                <span>Cursos obtidos: {{ bought.count }}</span>
+                <span>Certificados emitidos: 0</span>
+            </div>  
+            <div class="exit">
+                <a class='exit-a' href="/user/logout">Sair</a>
+            </div>   
+        </div>
+        
     
-    <div class="all-my-courses">
-        <h2>Cursos adquiridos</h2>
-        {% for curso in courses %}
-        <a class="mycourses" href="{{ curso.get_absolute_url }}">{{ curso.title }}</a>
-        {% endfor %}
+        <div class="all-my-courses">
+            <h2>Seus cursos</h2>
+            {% for curso in courses %}
+            <div class='my-user-course'>
+                <a href="{{ curso.get_absolute_url }}"><span class="material-symbols-outlined">play_circle</span></a>
+                <a class="my-courses" href="{{ curso.get_absolute_url }}">{{ curso.title }}</a>
+                <span class="my-progress">0/{{ curso.lesson.all.count }} aulas concluídas</span>                
+            </div>
+            {% endfor %}
+            <div class="exit mais-cursos">
+                <a href="/cursos" class="exit-a mais-cursos-a">Ver mais cursos</a>
+            </div>
+        </div>
     </div>
+    
     
 </body>
 </html>

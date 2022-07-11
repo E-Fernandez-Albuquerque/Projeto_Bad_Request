@@ -1,4 +1,151 @@
 .all-my-courses{
     display: flex;
     flex-direction: column;
+    width: 40%;
+
+    padding: 0 20px;
+    box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.15);
+    justify-content: space-around;
+
+    border-left: 5px solid #0055BB;
+    border-radius: 5px;
+}
+
+.my-user-course{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    border-bottom: #0055BB 2px solid;
+    padding: 0px 8px;
+    border-radius: 10px;
+}
+
+.my-user-course a{
+    padding: 0 30px 0 5px;
+    font-size: 16px;
+    color: rgb(10,20,40);
+    text-decoration: none;
+}
+
+.my-user-course a:visited{
+    text-decoration: none;
+    color: rgb(10,20,40);
+}
+
+.my-user-course span{
+    color: #0055BB;
+}
+
+.my-user-course .my-progress{
+    font-size: 10px;
+}
+
+.user-profile{
+    padding: 20px;
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    margin: 0 auto;
+}
+
+.user-info{
+    padding: 20px 20px;
+    border-left: 5px solid #0055BB;
+    box-shadow: 1px 3px 4px 1px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: black;
+}
+
+.prof-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-info img{
+    width: 100px;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+}
+
+.info h2{
+    font-size: 24px;
+    font-family: sans-serif;
+    font-weight: 100;
+    color: rgb(10,20,40);
+}
+
+.info span{
+    color: #0055BB;
+    font-size: 14px;
+}
+
+.exit{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 0 0 0;
+}
+
+.exit-a{
+    padding: 5px 30px;   
+    color: red;
+    text-decoration: none; 
+    border: 1px solid red;
+    border-radius: 15px;
+    transition: all 0.1s ease;
+}
+
+.exit-a:visited{
+    color: red;
+    text-decoration: none;
+}
+
+.exit-a:hover{
+ transform: scale(1.1);
+}
+
+.mais-cursos{
+    margin-bottom: 15px;
+}
+
+.mais-cursos-a{
+    color: #0055BB;
+    border-color: #0055BB;
+}
+
+.mais-cursos-a:visited{
+    color: #0055BB;
+}
+
+@media (max-width:700px){
+
+    .user-profile{
+        flex-direction: column;
+        margin-bottom: 15px;
+        width: 85%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .user-info{
+        margin-bottom: 15px;
+        width: 80%;
+    }
+
+    .all-my-courses{
+        width: 80%;
+    }
 }
