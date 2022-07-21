@@ -98,5 +98,5 @@ class AccountCreateView(APIView):
                 if user is not None:
                     if user.is_active:
                         login(request, user)
-                return Response({'created', 'Usuário criado com sucesso'}, status=status.HTTP_201_CREATED)
+                        return Response({'created', 'Usuário criado com sucesso'}, status=status.HTTP_201_CREATED)
         return Response({'Bad request': 'Dados inválidos'}, status=status.HTTP_400_BAD_REQUEST)

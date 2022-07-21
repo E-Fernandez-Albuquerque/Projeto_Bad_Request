@@ -106,6 +106,7 @@
     border: 1px solid red;
     border-radius: 15px;
     transition: all 0.1s ease;
+    margin: 10px;
 }
 
 .exit-a:visited{

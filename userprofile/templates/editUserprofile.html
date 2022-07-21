@@ -40,23 +40,11 @@
 
     <div class="user-profile">
         <div class="user-info">
-            <div class="info">
-                <div class="prof-img">
-                    <img src="{% static "images" %}/icons/profile-blue.png" class="profile-pic">
-                </div>
-                <h2>Olá, {{ user.username }}.</h2>
-                <span>Email: {{ user.email }}</span>
-                <span>Membro desde: {{ user.date_joined }}</span>
-            </div>
-            <div class="learning-info info">
-                <h3>Informações de aprendizado</h3>
-                <span>Cursos obtidos: {{ bought.count }}</span>
-                <span>Certificados emitidos: 0</span>
-            </div>    
-            <div class="exit">
-                <a class='exit-a mais-cursos-a' href="/perfil/editar">Editar dados</a>
-                <a class='exit-a' href="/user/logout">Sair</a>
-            </div>   
+            <form method='POST'>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Atualizar">
+            </form>
         </div>
         
     
