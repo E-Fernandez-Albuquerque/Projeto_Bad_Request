@@ -20,9 +20,18 @@
             <span>{{ user.username }}</span>
             <span style="font-size: 8px !important; color: red;">{{ user.date_joined }}</span>
             <div class="myadmin-icons">
-                <a href='/myadmin/usuarios/editar-usuario/{{ user.id }}'><span class="material-symbols-outlined">edit</span></a>
-                <a href='/myadmin/usuarios/editar-usuario/{{ user.id }}/cursos-adquiridos'><span class="material-symbols-outlined">subscriptions</span></a>
-                <a href='/myadmin/usuarios/deletar-usuario/{{ user.id }}'><span class="material-symbols-outlined">delete</span></a>
+                <div class="tooltip">
+                    <a href='/myadmin/usuarios/editar-usuario/{{ user.id }}'><span class="material-symbols-outlined">edit</span></a>
+                    <span class="tooltiptext">Informações do usuário</span>
+                </div>
+                <div class="tooltip">
+                    <a href='/myadmin/usuarios/editar-usuario/{{ user.id }}/cursos-adquiridos'><span class="material-symbols-outlined">subscriptions</span></a>
+                    <span class="tooltiptext">Cursos adquiridos</span>
+                </div>
+                <div class="tooltip">
+                    <a href='/myadmin/usuarios/deletar-usuario/{{ user.id }}'><span class="material-symbols-outlined">delete</span></a>
+                    <span class="tooltiptext">Excluir</span>
+                </div>
             </div>
         </div>
         {% endfor %}

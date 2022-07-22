@@ -1,9 +1,11 @@
 from email.policy import default
+from tkinter import CASCADE
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import User
 from datetime import datetime
 from django.shortcuts import get_object_or_404, redirect, HttpResponseRedirect
+from django.core.validators import MaxValueValidator, MinValueValidator 
 
 class Course(models.Model):
     title = models.CharField(max_length=255, null=False, unique=True)
@@ -91,3 +93,18 @@ class BoughtBy(models.Model):
 
     def __str__(self):
         return f'{self.user.username}'
+
+# class Alternativas(models.Model):
+#     pass
+
+
+# class Question(models.Model):
+#     conteudo = models.CharField(max_length=255, null=False)
+#     enunciado = models.TextField()
+#     resposta = models.TextField()
+#     opcoes = 
+
+# class Avaliacoes(models.Model):
+#     course = models.ForeignKey(Course, related_name='avaliacao', on_delete=CASCADE)
+#     qttQuestions = models.IntegerField(default=10, validators=[MinValueValidator(5), MaxValueValidator(10)])
+

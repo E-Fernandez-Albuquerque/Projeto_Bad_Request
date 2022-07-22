@@ -19,9 +19,24 @@
         <div class="myadmin-course">
             <span>{{ curso.title }}</span>
             <div class="myadmin-icons">
-                <a href='/myadmin/cursos/editar-curso/{{ curso.id }}'><span class="material-symbols-outlined">edit</span></a>
-                <a href='/myadmin/cursos/editar-curso/{{ curso.id }}/aulas'><span class="material-symbols-outlined">play_lesson</span></a>
-                <a href='/myadmin/cursos/deletar-curso/{{ curso.id }}'><span class="material-symbols-outlined">delete</span></a>
+                <div class="my-icons">
+                    <div class="tooltip">
+                        <a href='/myadmin/cursos/editar-curso/{{ curso.id }}'><span class="material-symbols-outlined">edit</span></a>
+                        <span class="tooltiptext">Dados básicos</span>
+                    </div>
+                    <div class="tooltip">
+                        <a href='/myadmin/cursos/editar-curso/{{ curso.id }}/aulas'><span class="material-symbols-outlined">play_lesson</span></a>
+                        <span class="tooltiptext">Editar Aulas</span>
+                    </div>
+                    <div class="tooltip">
+                        <a href='/myadmin/cursos/deletar-curso/{{ curso.id }}'><span class="material-symbols-outlined">delete</span></a>
+                        <span class="tooltiptext">Excluir curso</span>
+                    </div>
+                </div>
+                    
+                
+                
+                
             </div>
             
         </div>
