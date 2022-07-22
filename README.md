@@ -56,3 +56,5 @@ Apresentação da primeira etapa do projeto (Prova de conceito): https://www.can
 
 Repositório inicial do projeto: https://github.com/E-Fernandez-Albuquerque/escola-online-tecnologia
 
+Apresentação da segunda etapa do projeto: https://www.canva.com/design/DAFHFSVaPXk/LjZvSGAe5PPFilzjkST-4Q/edit?utm_content=DAFHFSVaPXk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
